@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row mb-2">
         <div class="col-md-2">
           <select class="form-control" id="year">
             <option value="">Year</option>
@@ -66,9 +66,49 @@
           <select class="form-control" id="month">
             <option value="">Month</option>
             <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
           </select>
         </div>
 
+        <div class="col-md-2">
+          <input class="form-control"type="text" id="day" placeholder="Day">
+        </div>
+
+        <div class="col-md-6">
+          <select class="form-control" id="type">
+            <option value="">Type</option>
+            <option value="food">Food</option>
+            <option value="education">Education</option>
+            <option value="recreation">Recreation</option>
+            <option value="health">Health</option>
+            <option value="transport">Transport</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <input class="form-control" type="text" id="description" placeholder="Description">
+        </div>
+
+        <div class="col-md-2">
+          <input type="text" class="form-control" id="value" placeholder="Value">
+        </div>
+
+        <div class="col-md-2 d-flex justify-content-end">
+          <button type="button" class="btn btn-primary">
+            <i class="fas fa-plus"></i>
+          </button>
         </div>
 
       </div>
