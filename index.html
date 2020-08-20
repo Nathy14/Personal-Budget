@@ -5,7 +5,6 @@
     <title>Personal Budget</title>
 
 
-
     <!-- Bootstrap início -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -17,8 +16,7 @@
     <!-- font awesome -->
      <script src="https://kit.fontawesome.com/a4ed003e1a.js" crossorigin="anonymous"></script>
 
-     <!--style-->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="app.js"></script>
 
   </head>
   <body>
@@ -106,7 +104,7 @@
         </div>
 
         <div class="col-md-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-primary">
+          <button onclick="registerExpense()" type="button" class="btn btn-primary">
             <i class="fas fa-plus"></i>
           </button>
         </div>
@@ -115,8 +113,23 @@
 
     </div>
 
-
-
+    <!-- Modal -->
+    <div class="modal fade" id="modalRegisterExpense" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div id="modal_title_div">
+            <h5 class="modal-title" id="modal_title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id='modal_content'></div>
+          <div class="modal-footer">
+            <button  data-dismiss = "modal" type="button" id='modal_btn'>Go back</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>
