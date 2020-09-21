@@ -36,6 +36,23 @@ class Bd{
       localStorage.setItem(id, JSON.stringify(d))
       localStorage.setItem('id', id)
     }
+
+    recoverAllData(){
+      //expenses array
+      let expenses = Array()
+
+      let id = localStorage.getItem('id')
+      //recover all expenses on Local Storage
+      for(let i = 1; i <= id;i++){
+        let expense = JSON.parse(localStorage.getItem(i))
+        //if the id is null
+        if(expense === null){
+          continue // continue the for instruction :)
+        }
+        expenses.push(expense)
+      }
+      return expenses
+    }
 }
 
 let bd = new Bd
@@ -72,5 +89,37 @@ function registerExpense(){
     document.getElementById('modal_btn').className = 'btn btn-danger'
     $('#modalRegisterExpense').modal('show')
   }
+}
+
+function loadExpenseList(){
+  let expenses =  Array()
+  expenses = bd.recoverAllData() //receive the Array with all expenses
+
+  var expensesList = document.getElementById('expensesList')
+
+  expenses.forEach(function(d){
+    //creating the line (tr)
+    let line = expensesList.insertRow()
+    //creating the colums (td)
+    line.insertCell(0).innerHTML = `${d.day}/${d.month}/${d.year}`
+
+    switch (d.tipo) {
+      case '1': d.tipo = "Food"
+        break
+      case '2': d.tipo = 'Education'
+        break
+      case '3': d.tipo = 'Recreation'
+        break
+      case '4': d.tipo = 'Health'
+        break
+      case '5': d.tipo = 'Transport'
+        break
+    }
+    console.log(d.type)
+    line.insertCell(1).innerHTML = d.type
+    line.insertCell(2).innerHTML = d.description
+    line.insertCell(3).innerHTML = d.value
+  })
+
 
 }
